@@ -24,7 +24,12 @@
         placeholder="Senha"
         v-model="loginPayload.password"
       />
-      <b-button class="login_btn" @click="login" icon="bi:box-arrow-in-right" icon-end color="primary"
+      <b-button
+        class="login_btn"
+        @click="login"
+        icon="bi:box-arrow-in-right"
+        icon-end
+        color="primary"
         >Entrar</b-button
       >
       <b-button class="login_btn" icon="bi:person-plus" icon-end color="warning"
@@ -38,7 +43,7 @@
 import { ref } from "vue";
 import { useAuthStore } from "~/stores/authStore";
 definePageMeta({
-  layout: "blank", // Usa o layout blank.vue
+  layout: "blank",
 });
 
 const authStore = useAuthStore();
@@ -49,14 +54,8 @@ const loginPayload = ref<{ email: string; password: string }>({
 });
 
 function login() {
-  // Autenticação fake
   authStore.setUser(loginPayload.value);
   navigateTo("/");
-}
-
-
-function definePageMeta(arg0: { layout: string; }) {
-  throw new Error("Function not implemented.");
 }
 </script>
 <style scoped>

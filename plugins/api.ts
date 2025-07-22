@@ -5,7 +5,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     baseURL: "https://api.themoviedb.org/3",
     onRequest({ request, options, error }) {
       if (config.public.apiToken) {
-        // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
         options.headers.set(
           "Authorization",
           `Bearer ${config.public.apiToken}`
@@ -17,7 +16,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
   });
 
-  // Expose to useNuxtApp().$api
   return {
     provide: {
       api,
