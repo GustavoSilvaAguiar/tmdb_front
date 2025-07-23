@@ -17,7 +17,7 @@
     <div class="horizontal-scroll-container" ref="scrollContainer">
       <div class="scroll-content" ref="scrollContent">
         <div v-for="(item, index) in items" :key="index">
-          <CardFilme :filme="item" :initial-favorite="true"></CardFilme>
+          <CardFilme :filme="item"></CardFilme>
         </div>
       </div>
     </div>

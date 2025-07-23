@@ -25,10 +25,6 @@
               <NavLink @click="logout">Logout</NavLink>
             </NavItem>
           </NavbarNavList>
-          <BForm flex role="search">
-            <BFormInput margin="e-2" type="search" placeholder="Search" />
-            <b-button color="outline-success" type="submit"> Search </b-button>
-          </BForm>
         </NavbarCollapse>
       </Container>
     </Navbar>

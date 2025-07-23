@@ -3,6 +3,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const api = $fetch.create({
     baseURL: "https://api.themoviedb.org/3",
+    query: { language: "pt-br" },
     onRequest({ request, options, error }) {
       if (config.public.apiToken) {
         options.headers.set(

@@ -4,13 +4,18 @@
     :class="{ 'is-favorite': isFavorite }"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
+    @click="goTo"
   >
     <div class="poster-container">
-      <img
+      <NuxtImg
         :src="`https://image.tmdb.org/t/p/w200${filme.poster_path}`"
-        :alt="filme.title"
+        :alt="`Poster do filme ${filme.title}`"
         class="poster-image"
+        format="webp"
+        quality="80"
         loading="lazy"
+        placeholder="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgMzAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2VlZWVlZSIgLz48L3N2Zz4="
+        provider="ipx"
       />
 
       <button
@@ -38,12 +43,7 @@
         <div class="info-backdrop"></div>
         <div class="info-content">
           <h3 class="movie-title">{{ filme.title }}</h3>
-          <div class="movie-genres">
-            <span v-for="(genero, index) in filme.genre_ids" :key="index">
-              {{ genero
-              }}<span v-if="index < filme.genre_ids.length - 1">, </span>
-            </span>
-          </div>
+
           <div class="movie-rating">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,14 +65,20 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import type IMovie from "~/interfaces/movieInterface";
+import { useFavoritosStore } from "~/stores/favoritosStore";
 
-const props = defineProps<{ filme: IMovie; initialFavorite: boolean }>();
+const route = useRoute();
+
+const props = defineProps<{ filme: IMovie }>();
 
 const emit = defineEmits(["toggle-favorite"]);
 
+const authStore = useAuthStore();
+
 const isHovered = ref(false);
-const isFavorite = ref(props.initialFavorite);
 const isMobile = ref(false);
+const favoritoStore = useFavoritosStore();
+const isFavorite = computed(() => favoritoStore.findFilmeFavorito(props.filme));
 
 const checkIfMobile = () => {
   isMobile.value = window.innerWidth <= 768;
@@ -80,8 +86,14 @@ const checkIfMobile = () => {
 
 const toggleFavorite = (event: any) => {
   event.preventDefault();
-  isFavorite.value = !isFavorite.value;
-  emit("toggle-favorite", { id: props.filme.id, favorite: isFavorite.value });
+  event.stopPropagation();
+  if (authStore.isAuthenticated) {
+    isFavorite.value
+      ? favoritoStore.removeFilmeFavorito(props.filme)
+      : favoritoStore.addFilmeFavorito(props.filme);
+  } else {
+    navigateTo("/login");
+  }
 };
 
 onMounted(() => {
@@ -92,6 +104,17 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("resize", checkIfMobile);
 });
+
+const goTo = () => {
+  navigateTo({
+    path: "/detail",
+    query: { id: props.filme.id },
+    force: true,
+  });
+  if (route.path === "/detail") {
+    window.location.search = `?id=${props.filme.id}`;
+  }
+};
 </script>
 
 <style scoped>
@@ -213,16 +236,6 @@ onBeforeUnmount(() => {
   text-overflow: ellipsis;
 }
 
-.movie-genres {
-  font-size: 12px;
-  opacity: 0.9;
-  margin-bottom: 4px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 .movie-rating {
   display: flex;
   align-items: center;
@@ -250,10 +263,6 @@ onBeforeUnmount(() => {
 
   .movie-title {
     font-size: 12px;
-  }
-
-  .movie-genres {
-    font-size: 10px;
   }
 }
 
