@@ -58,7 +58,6 @@ export default defineNuxtConfig({
           sizes: "16x16",
           href: "/favicon-16x16.png",
         },
-        
       ],
       script: [
         {
@@ -96,7 +95,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["usebootstrap", "@pinia/nuxt"],
+  modules: ["usebootstrap", "@pinia/nuxt", "@nuxt/test-utils/module"],
   runtimeConfig: {
     public: {
       apiToken: process.env.TMDB_API_TOKEN || "",

@@ -42,7 +42,9 @@
       <div class="movie-info" :class="{ visible: isMobile || isHovered }">
         <div class="info-backdrop"></div>
         <div class="info-content">
-          <h3 class="movie-title">{{ filme.title }}</h3>
+          <h3 class="movie-title">
+            <span data-testid="filme_title">{{ filme.title }}</span>
+          </h3>
 
           <div class="movie-rating">
             <svg

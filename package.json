@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:dev": "vitest",
+    "test:ci": "vitest run"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.11.2",
@@ -16,5 +18,12 @@
     "usebootstrap": "^3.5.107",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.19.2",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^18.0.1",
+    "playwright-core": "^1.54.1",
+    "vitest": "^3.2.4"
   }
 }
