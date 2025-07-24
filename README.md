@@ -1,75 +1,66 @@
-# Nuxt Minimal Starter
+# 🎬 Cine Explorer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Projeto de exibição de filmes, realizado com Nuxt 3, que permite login (apenas simbolico e para separar os favoritos), favoritar filmes, olhar suas sinopses e a acessar dados da API do TMDB.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 📷 Demonstração
 
-```bash
-# npm
+![Screenshot do projeto](./public/image.png)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- [Nuxt 3](https://nuxt.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [useBootstrap](https://usebootstrap.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [TMDB API](https://developer.themoviedb.org/docs/getting-started)
+
+---
+
+## 📦 Instalação
+
+# 1. Clone o repositório
+git clone https://github.com/GustavoSilvaAguiar/tmdb_front.git
+
+# 2. Acesse a pasta
+cd seu-repo
+
+# 3. Instale as dependências
 npm install
 
-# pnpm
-pnpm install
+# 4. Crie um arquivo .env com as chaves da API
+duplique o arquivo .env copy e o renomeie para .env e coloque seu token
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# 5. Rode o servidor de desenvolvimento
 npm run dev
 
-# pnpm
-pnpm dev
+---
 
-# yarn
-yarn dev
+## 📦 Build para Produção
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
 
-# pnpm
-pnpm preview
+---
 
-# yarn
-yarn preview
+## 🧪 Funcionalidades 
 
-# bun
-bun run preview
-```
+- Listagem de filmes populares
+- Listagem de filmes em alta
+- Página de favoritos (armazenados em localhost)
+- Sistema de login e logout simulados
+- Layout responsivo
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## 💡 Sugestões de Melhoria
+
+- Implementar autenticação e criação de contas em um back-end próprio
+- Adicionar mais informações dos filmes
+- Adicionar mais opções de pesquisa e navegação
+- Explorar mais as possibilidades da API da TMDB
+- Melhorar a performance do site
