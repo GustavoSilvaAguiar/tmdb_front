@@ -32,9 +32,6 @@
         color="primary"
         >Entrar</b-button
       >
-      <b-button class="login_btn" icon="bi:person-plus" icon-end color="warning"
-        >Criar Conta</b-button
-      >
     </span>
   </div>
 </template>
@@ -74,6 +71,7 @@ function login() {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: gray;
 }
 
 .button_class {

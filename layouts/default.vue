@@ -3,12 +3,16 @@
     <Navbar expand="lg" background-color="body-tertiary">
       <Container type="fluid">
         <NavbarBrand>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIlRZQfdIMa1D8Wy-cqT3GKpvFdgxDrAq9Eg&s"
+          <NuxtImg
+            src="../public/cinema-sobre-fundo.png"
             alt="Logo"
-            width="30"
-            height="30"
-        /></NavbarBrand>
+            quality="80"
+            loading="lazy"
+            width="50"
+            height="50"
+            placeholder="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgMzAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2VlZWVlZSIgLz48L3N2Zz4="
+          />
+        </NavbarBrand>
         <NavbarToggler />
         <NavbarCollapse>
           <NavbarNavList margin="e-auto b-2 b-lg-0" scroll>

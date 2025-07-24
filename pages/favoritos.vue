@@ -1,13 +1,14 @@
 <template>
-  <h1 class="mb-4 mr-4">Favoritos</h1>
-  <Container>
-    <Row>
-      <Col v-for="(filme, index) in filmesFavoritos" :key="index">
-        <CardFilme :filme="filme" class="mb-4"
-      /></Col>
-    </Row>
-  </Container>
-  
+  <div class="movie-container">
+    <TitleComponent>Favoritos</TitleComponent>
+    <Container>
+      <Row>
+        <Col v-for="(filme, index) in filmesFavoritos" :key="index">
+          <CardFilme :filme="filme" class="mb-4"
+        /></Col>
+      </Row>
+    </Container>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -20,4 +21,10 @@ const favoritosStore = useFavoritosStore();
 const filmesFavoritos = favoritosStore.filmesFavoritos;
 </script>
 
-<style scoped></style>
+<style scoped>
+.movie-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+</style>

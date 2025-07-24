@@ -1,7 +1,6 @@
 <template>
   <div class="movie-detail-container">
     <div class="movie-content-wrapper">
-      <!-- Imagem do poster -->
       <NuxtImg
         :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
         :alt="`Poster do filme ${movie.title}`"
@@ -13,7 +12,6 @@
         provider="ipx"
       />
 
-      <!-- Conteúdo textual -->
       <div class="movie-text-content">
         <h1 class="movie-title">{{ movie.title }}</h1>
         <div class="genres-container">
@@ -49,7 +47,6 @@ import moviesService from "~/services/Movies/moviesService";
 const route = useRoute();
 const id = ref(route.query.id);
 
-// Verificação do ID
 if (!id.value) {
   showError({ statusCode: 400, message: "ID do filme não fornecido" });
 }
@@ -119,7 +116,6 @@ const formatDate = (dateString) => {
   font-size: 0.9rem;
 }
 
-/* Responsividade - Mobile */
 @media (max-width: 768px) {
   .movie-content-wrapper {
     flex-direction: column;
