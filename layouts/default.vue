@@ -4,7 +4,7 @@
       <Container type="fluid">
         <NavbarBrand>
           <NuxtImg
-            src="../public/cinema-sobre-fundo.png"
+            src="/cinema-sobre-fundo.png"
             alt="Logo"
             quality="80"
             loading="lazy"

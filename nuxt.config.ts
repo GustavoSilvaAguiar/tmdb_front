@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         },
         // Open Graph / Facebook
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://cineexplorer.com.br" },
+        { property: "og:url", content: "https://tmdb-front.vercel.app/" },
         {
           property: "og:title",
           content: "Cine Explorer | Filmes e Séries em Destaque",
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:image",
-          content: "https://cineexplorer.com.br/images/og-image.jpg",
+          content: "https://tmdb-front.vercel.app/",
         },
 
         // Apple/Safari
@@ -66,28 +66,13 @@ export default defineNuxtConfig({
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Cine Explorer",
-            url: "https://cineexplorer.com.br",
+            url: "https://tmdb-front.vercel.app/",
             potentialAction: {
               "@type": "SearchAction",
               target:
-                "https://cineexplorer.com.br/search?q={search_term_string}",
+                "https://tmdb-front.vercel.app/detail?id={search_term_string}",
               "query-input": "required name=search_term_string",
             },
-          }),
-        },
-        {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Cine Explorer",
-            url: "https://cineexplorer.com.br",
-            logo: "https://cineexplorer.com.br/images/logo.png",
-            sameAs: [
-              "https://facebook.com/cineexplorer",
-              "https://twitter.com/cineexplorer",
-              "https://instagram.com/cineexplorer",
-            ],
           }),
         },
       ],
@@ -102,4 +87,5 @@ export default defineNuxtConfig({
     },
   },
   image: {},
+  css: ["~/assets/css/main.css"],
 });
