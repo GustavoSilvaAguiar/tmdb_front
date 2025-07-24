@@ -4,13 +4,16 @@ Projeto de exibição de filmes, realizado com Nuxt 3, que permite login (apenas
 
 ---
 
-## 📷 Demonstração
+# 📷 Demonstração
 
 ![Screenshot do projeto](./public/image.png)
 
+# URL do site
+https://tmdb-front.vercel.app/
+
 ---
 
-## 🛠️ Tecnologias Utilizadas
+# 🛠️ Tecnologias Utilizadas
 
 - [Nuxt 3](https://nuxt.com/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -20,26 +23,26 @@ Projeto de exibição de filmes, realizado com Nuxt 3, que permite login (apenas
 
 ---
 
-## 📦 Instalação
+# 📦 Instalação
 
-# 1. Clone o repositório
+## 1. Clone o repositório
 git clone https://github.com/GustavoSilvaAguiar/tmdb_front.git
 
-# 2. Acesse a pasta
+## 2. Acesse a pasta
 cd seu-repo
 
-# 3. Instale as dependências
+## 3. Instale as dependências
 npm install
 
-# 4. Crie um arquivo .env com as chaves da API
+## 4. Crie um arquivo .env com as chaves da API
 duplique o arquivo .env copy e o renomeie para .env e coloque seu token
 
-# 5. Rode o servidor de desenvolvimento
+## 5. Rode o servidor de desenvolvimento
 npm run dev
 
 ---
 
-## 📦 Build para Produção
+# 📦 Build para Produção
 
 npm run build
 
@@ -47,7 +50,7 @@ npm run preview
 
 ---
 
-## 🧪 Funcionalidades 
+# 🧪 Funcionalidades 
 
 - Listagem de filmes populares
 - Listagem de filmes em alta
@@ -57,7 +60,7 @@ npm run preview
 
 ---
 
-## 💡 Sugestões de Melhoria
+# 💡 Sugestões de Melhoria
 
 - Implementar autenticação e criação de contas em um back-end próprio
 - Adicionar mais informações dos filmes
