@@ -20,6 +20,7 @@ https://tmdb-front.vercel.app/
 - [useBootstrap](https://usebootstrap.org/)
 - [Pinia](https://pinia.vuejs.org/)
 - [TMDB API](https://developer.themoviedb.org/docs/getting-started)
+- [Nuxt test uyils](https://nuxt.com/docs/3.x/getting-started/testing)
 
 ---
 
@@ -50,7 +51,13 @@ npm run preview
 
 ---
 
-# 🧪 Funcionalidades 
+# 🧪 Testes
+
+npm run test:dev
+
+---
+
+# 🚀 Funcionalidades 
 
 - Listagem de filmes populares
 - Listagem de filmes em alta
@@ -67,3 +74,4 @@ npm run preview
 - Adicionar mais opções de pesquisa e navegação
 - Explorar mais as possibilidades da API da TMDB
 - Melhorar a performance do site
+- Melhorar o design do site
